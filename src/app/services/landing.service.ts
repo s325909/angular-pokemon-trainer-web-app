@@ -38,20 +38,20 @@ export class LandingService {
       )
   }
 
-  // IF NOT trainer - Create trainer
+  // Create trainer
   private createTrainer(username: string): Observable<Trainer> {
     const trainer = {
       username,
       pokemon: [],
     }
 
+    // API Headers config
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
       "x-api-key": apiTrainersKey,
     });
 
     return this.http.post<Trainer>(apiTrainers, trainer, { headers });
-
   }
 
   // IF trainer || Created trainer -> Store trainer
