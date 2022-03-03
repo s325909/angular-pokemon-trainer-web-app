@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CataloguePage } from './pages/catalogue/catalogue.page';
@@ -9,16 +10,17 @@ import { LandingPage } from './pages/landing/landing.page';
 import { LandingFormComponent } from './components/landing-form/landing-form.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ // Components
     AppComponent,
     CataloguePage,
     TrainerPage,
     LandingPage,
     LandingFormComponent,
   ],
-  imports: [
+  imports: [  // Modules
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
