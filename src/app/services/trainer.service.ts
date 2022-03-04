@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { StorageKeys } from '../enums/storage-keys.enum';
+import { Pokemon } from '../models/pokemon.model';
 import { Trainer } from '../models/trainer.model';
 import { StorageUtil } from '../utils/storage.util';
 
@@ -22,4 +23,12 @@ export class TrainerService {
   constructor() {
     this._trainer = StorageUtil.storageRead<Trainer>(StorageKeys.Trainer);
   }
+
+  // public inPokemon(pokemonId: number): boolean {
+  //   if (this._trainer) {
+  //     return Boolean(this.trainer?.pokemon.find((pokemon: Pokemon) => pokemon.id === pokemonId))
+  //   }
+
+  //   return false;
+  // }
 }
