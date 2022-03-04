@@ -1,0 +1,15 @@
+<li *ngIf="pokemon" class="mb-4 shadow">
+    <section class="p-4">
+        <img [src]="pokemon.url" [alt]="pokemon.url" class="block w-72" />
+    </section>
+    <section class="p-4">
+        <span class="text-2xl ">{{ pokemon.name }}</span>
+
+        <span class="block text-xl">Attributes/stats {{ pokemon.name }}</span>
+        <ul>
+            <li>Attack</li>
+            <li>Defence</li>
+            <li>Power </li>
+        </ul>
+    </section>
+</li>

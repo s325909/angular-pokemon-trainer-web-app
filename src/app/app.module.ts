@@ -10,6 +10,7 @@ import { LandingPage } from './pages/landing/landing.page';
 import { LandingFormComponent } from './components/landing-form/landing-form.component';
 import { FormsModule } from '@angular/forms';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
 
 @NgModule({
   declarations: [ // Components
@@ -19,6 +20,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
     LandingPage,
     LandingFormComponent,
     PokemonListComponent,
+    PokemonListItemComponent,
   ],
   imports: [  // Modules
     BrowserModule,
