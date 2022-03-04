@@ -29,7 +29,7 @@ export class LandingFormComponent {
     this.landingService.login(username)
       .subscribe({
         next: (trainer: Trainer) => {
-          // redirect to catalogue page
+          // redirect to trainer page
           this.trainerService.trainer = trainer;
           this.login.emit();
         },

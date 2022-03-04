@@ -9,6 +9,7 @@ import { TrainerPage } from './pages/trainer/trainer.page';
 import { LandingPage } from './pages/landing/landing.page';
 import { LandingFormComponent } from './components/landing-form/landing-form.component';
 import { FormsModule } from '@angular/forms';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
 @NgModule({
   declarations: [ // Components
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     TrainerPage,
     LandingPage,
     LandingFormComponent,
+    PokemonListComponent,
   ],
   imports: [  // Modules
     BrowserModule,

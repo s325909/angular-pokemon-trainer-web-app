@@ -2,7 +2,7 @@ export interface Pokemon {
     count: number;
     next: string;
     previous: null;
-    results77: Result;
+    results: Result;
 }
 
 export interface Result {
