@@ -8,6 +8,7 @@ import { Pokemon } from 'src/app/models/pokemon.model';
 })
 export class PokemonListItemComponent implements OnInit {
 
+
   @Input() pokemon?: Pokemon;
 
   constructor() { }

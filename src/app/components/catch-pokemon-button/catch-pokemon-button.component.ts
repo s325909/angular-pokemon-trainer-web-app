@@ -15,7 +15,7 @@ export class CatchPokemonButtonComponent implements OnInit {
   }
 
   onCatchClick(): void {
-    alert("You caught the pokemon: " + this.pokemonName + ". Congrats brother!")
+    alert("You caught the pokemon: " + this.pokemonName.charAt(0).toUpperCase() + this.pokemonName.slice(1) + ". Congrats brother!")
   }
 
 }
