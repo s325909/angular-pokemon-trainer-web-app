@@ -4,7 +4,7 @@ import { finalize } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Pokemon, Result } from '../models/pokemon.model';
 
-const { apiPokemons } = environment;
+const { apiPokemons, urlPokemonImage } = environment;
 
 @Injectable({
   providedIn: 'root'
@@ -45,11 +45,27 @@ export class PokemonCatalogueService {
           
           this._pokemons = results;
           console.log(this._pokemons);
+
+          this.setPokemonIds();
+          console.log(this._pokemons);
           
         },
         error: (error: HttpErrorResponse) => {
           this._error = error.message;
         }
       })
+  }
+
+  public pokemonByName(name: string): Pokemon | undefined {
+    return this._pokemons.find((pokemon: Pokemon) => pokemon.name)
+  }
+
+  public setPokemonIds(): void{
+    // const pokemon = this._pokemons.find((pokemon: Pokemon) => pokemon.name)
+    this._pokemons.forEach((pokemon, index) => {
+      const id = index + 1;
+      pokemon.id = id;
+      pokemon.img = urlPokemonImage + id + ".png"
+    });
   }
 }

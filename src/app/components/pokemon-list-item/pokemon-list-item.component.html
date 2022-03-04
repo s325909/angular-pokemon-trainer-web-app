@@ -1,16 +1,16 @@
 <li *ngIf="pokemon" class="mb-4 shadow bg-white rounded relative">
     <app-catch-pokemon-button [pokemonName]="pokemon.name"></app-catch-pokemon-button>
     <section class="p-4">
-        <img [src]="pokemon.url" [alt]="pokemon.url" class="block w-72" />
+        <img [src]="pokemon.img" [alt]="pokemon.img" class="block w-72" />
     </section>
     <section class="p-4">
-        <span class="text-2xl capitalize">{{ pokemon.name }}</span>
+        <span class="text-2xl capitalize">#{{ pokemon.id }} {{ pokemon.name }}</span>
 
-        <span class="block text-xl capitalize">Attributes/stats {{ pokemon.name }}</span>
+        <!-- <span class="block text-xl capitalize">Attributes/stats</span>
         <ul>
             <li>Attack</li>
             <li>Defence</li>
             <li>Power </li>
-        </ul>
+        </ul> -->
     </section>
 </li>
