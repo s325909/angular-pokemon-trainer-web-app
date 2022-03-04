@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-catch-pokemon-button',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatchPokemonButtonComponent implements OnInit {
 
+  @Input() pokemonName: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onCatchClick(): void {
+    alert("You caught the pokemon: " + this.pokemonName + ". Congrats brother!")
   }
 
 }
