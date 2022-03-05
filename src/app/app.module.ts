@@ -14,6 +14,7 @@ import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CatchPokemonButtonComponent } from './components/catch-pokemon-button/catch-pokemon-button.component';
 import { NgxLoadingModule } from 'ngx-loading';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { NgxLoadingModule } from 'ngx-loading';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    NgxLoadingModule.forRoot({})
+    NgxLoadingModule.forRoot({}),
+    MatPaginatorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
