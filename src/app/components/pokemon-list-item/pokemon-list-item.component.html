@@ -1,4 +1,4 @@
-<li *ngIf="pokemon" class="mb-4 shadow bg-white rounded relative">
+<div *ngIf="pokemon" class="mb-4 shadow bg-white rounded relative w-80">
     <app-catch-pokemon-button [pokemonName]="pokemon.name"></app-catch-pokemon-button>
     <section class="p-4">
         <img [src]="pokemon.img" [alt]="pokemon.img" class="block w-72" />
@@ -13,4 +13,4 @@
             <li>Power </li>
         </ul> -->
     </section>
-</li>
+</div>
