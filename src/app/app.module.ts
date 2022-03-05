@@ -13,6 +13,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon-list-item.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CatchPokemonButtonComponent } from './components/catch-pokemon-button/catch-pokemon-button.component';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [ // Components
@@ -31,6 +32,7 @@ import { CatchPokemonButtonComponent } from './components/catch-pokemon-button/c
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    NgxLoadingModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
