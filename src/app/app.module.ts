@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CatchPokemonButtonComponent } from './components/catch-pokemon-button/catch-pokemon-button.component';
 import { NgxLoadingModule } from 'ngx-loading';
 
+
 @NgModule({
   declarations: [ // Components
     AppComponent,
