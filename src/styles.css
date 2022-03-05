@@ -4,7 +4,10 @@
 @tailwind utilities;
 
 .bg-dark-blue {
-    background-color: rgb(42, 117, 187)
+    background-color: rgb(42, 117, 187);
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'Sanchez', serif;
 }
 
 
