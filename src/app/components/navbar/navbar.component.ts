@@ -25,9 +25,11 @@ export class NavbarComponent implements OnInit {
   }
 
   handleLogout(): void {
-    window.confirm('Are you sure?');
-    sessionStorage.clear();
-    this.router.navigateByUrl("/landing");
+    if (window.confirm('Are you sure?')) {
+      this.trainerService.trainer = undefined;
+      sessionStorage.clear();
+      this.router.navigateByUrl("/landing");
+    }
   }
 
 
