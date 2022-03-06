@@ -6,14 +6,19 @@
             <li class="px-4">
                 <a routerLink="/trainer"><span
                         class="material-icons-outlined transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...">
-                    backpack
+                        backpack
                     </span></a>
             </li>
             <li class=" px-4">
-                        <a routerLink="/catalogue"><span
-                                class="material-icons-outlined transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...">
-                                book
-                            </span></a>
+                <a routerLink="/catalogue"><span
+                        class="material-icons-outlined transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...">
+                        book
+                    </span></a>
+            </li>
+            <li class="px-4">
+                <a (click)="handleLogout()"><span class="material-icons-outlined transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...">
+                        logout
+                    </span></a>
             </li>
         </ul>
     </ng-container>
