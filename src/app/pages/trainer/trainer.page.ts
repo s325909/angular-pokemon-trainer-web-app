@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageKeys } from 'src/app/enums/storage-keys.enum';
+import { Pokemon } from 'src/app/models/pokemon.model';
+import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.service';
+import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({
   selector: 'app-trainer',
@@ -7,9 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerPage implements OnInit {
 
-  constructor() { }
+  private _caughtPokemon: Pokemon[] = [];
+
+  get trainerPokemon() {
+    return this._caughtPokemon;
+  }
+
+  get loading(): boolean {
+    return this.pokemonCatalogueService.loading;
+  }
+
+  get error(): string {
+    return this.pokemonCatalogueService.error;
+  }
+
+  constructor(
+    private readonly pokemonCatalogueService: PokemonCatalogueService,
+    private readonly trainerService: TrainerService,
+  ) { }
 
   ngOnInit(): void {
+    const trainer = this.trainerService.trainer;
+
+    if (trainer) {
+
+      trainer.pokemon.forEach(pokemonName => {
+        const pokemon = this.pokemonCatalogueService.pokemonByName(pokemonName.toString())
+        if (pokemon) this._caughtPokemon.push(pokemon);
+        console.log(this._caughtPokemon);
+      });
+    }
   }
 
 }

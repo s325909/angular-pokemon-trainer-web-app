@@ -62,6 +62,10 @@ export class PokemonCatalogueService {
     return this._pokemon.find((pokemon: Pokemon) => pokemon.id === id)
   }
 
+  public pokemonByName(name: string): Pokemon | undefined {
+    return this._pokemon.find((pokemon: Pokemon) => pokemon.name === name)
+  }
+
   public setPokemonIdsAndImg(): void{
     // const pokemon = this._pokemon.find((pokemon: Pokemon) => pokemon.name)
     this._pokemon.forEach((pokemon, index) => {

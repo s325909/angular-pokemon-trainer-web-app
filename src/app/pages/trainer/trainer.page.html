@@ -1,1 +1,5 @@
-<p>trainer works!</p>
+<main class="container mx-auto p-4">
+    <p *ngIf="loading"></p>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+    <app-pokemon-list [pokemons]="trainerPokemon"></app-pokemon-list>
+</main>

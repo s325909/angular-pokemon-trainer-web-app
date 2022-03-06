@@ -31,4 +31,11 @@ export class TrainerService {
 
   //   return false;
   // }
+
+  // public trainerCaughtPokemon() {
+  //   if (this.trainer !== undefined) {
+  //     const pokemon = servie
+  //   }
+    
+  // }
 }
