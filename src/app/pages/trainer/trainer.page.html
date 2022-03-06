@@ -1,5 +1,6 @@
 <main class="container mx-auto p-4">
     <p *ngIf="loading"></p>
     <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+    <h1 style="text-align: center;" class="p-4 text-3xl font-semibold">Your Pokémon</h1>
     <app-pokemon-list [pokemons]="trainerPokemon"></app-pokemon-list>
 </main>
