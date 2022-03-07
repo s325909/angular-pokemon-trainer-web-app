@@ -1,8 +1,22 @@
 <aside class="absolute top-4 right-4">
     <button (click)="onCatchClick()" style="z-index: 20"
         class="border border-slate-300 rounded flex justify-center items-center p-2 text-red-600">
-        <span class="material-icons md-dark md-inactive">
+
+        <span *ngIf="hasPokemon; then addPokemon else dontAddPokemon" class="material-icons"></span>
+
+        <ng-template #addPokemon>
+            <span class="material-icons md-dark md-active">
+                catching_pokemon
+            </span>
+        </ng-template>
+        <ng-template #dontAddPokemon>
+            <span class="material-icons md-dark md-inactive">
+                catching_pokemon
+            </span>
+        </ng-template>
+
+        <!-- <span class="material-icons md-dark md-inactive">
             catching_pokemon
-        </span>
+        </span> -->
     </button>
 </aside>
