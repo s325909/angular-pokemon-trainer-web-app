@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { finalize, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Pokemon } from '../models/pokemon.model';
@@ -20,10 +21,23 @@ export class PokemonCatchService {
     return this._loading;
   }
 
+  reloadComponent(): void {
+
+    const routeUrl = this.router.url
+    if (routeUrl === "/trainer") {
+
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false
+      this.router.onSameUrlNavigation = 'reload'
+      this.router.navigate(["/trainer"])
+      console.log(this.router.url);
+    }
+  }
+
   constructor(
     private readonly http: HttpClient,
     private readonly pokemonCatalogueService: PokemonCatalogueService,
     private readonly trainerService: TrainerService,
+    private readonly router: Router
   ) { }
 
   // Get the trainer based on Id
@@ -38,14 +52,6 @@ export class PokemonCatchService {
 
     const trainer: Trainer = this.trainerService.trainer;
 
-    // const pokemon: Pokemon | undefined = this.pokemonCatalogueService.pokemonByName;
-
-    // if (!pokemon) {
-    //   throw new Error("addToTrainerPokemons: no pokemon with name: " + pokemonName)
-    // }
-
-    // const hasPokemon: Pokemon | undefined = 
-
     let hasPokemon: boolean = false;
 
     if (this.trainerService.inTrainerPokemon(pokemonName)) {
@@ -53,11 +59,6 @@ export class PokemonCatchService {
       // throw new Error("addToTrainerPokemons: Pokemon already caught");
       hasPokemon = true;
     }
-
-    // if (this.trainerService.inPokemon(pokemonId)) {
-    //   throw new Error("addToTrainerPokemons: Pokemon already caught")
-    // }
-
 
     const headers = new HttpHeaders({
       "content-type": "application/json",
@@ -81,7 +82,8 @@ export class PokemonCatchService {
     }
     ).pipe(
       finalize(() => {
-        this._loading = false
+        this._loading = false,
+          this.reloadComponent()
       })
     );
   }
