@@ -46,9 +46,12 @@ export class PokemonCatchService {
 
     // const hasPokemon: Pokemon | undefined = 
 
+    let hasPokemon: boolean = false;
+
     if (this.trainerService.inTrainerPokemon(pokemonName)) {
-      alert("You already caught this Pokemon, Brother!")
-      throw new Error("addToTrainerPokemons: Pokemon already caught");
+      window.confirm("You already caught this Pokemon, Brother! \nWould you like to release it?")
+      // throw new Error("addToTrainerPokemons: Pokemon already caught");
+      hasPokemon = true;
     }
 
     // if (this.trainerService.inPokemon(pokemonId)) {
@@ -63,7 +66,13 @@ export class PokemonCatchService {
 
     this._loading = true;
 
-    trainer.pokemon.push(pokemonName)
+
+    if (!hasPokemon) {
+      trainer.pokemon.push(pokemonName)
+    } else {
+      // delete trainer.pokemon[trainer.pokemon.findIndex(p => p === pokemonName)];
+      trainer.pokemon = trainer.pokemon.filter(p => p !== pokemonName);
+    }
 
     return this.http.patch(`${apiTrainers}/${trainer.id}`, {
       pokemon: [...trainer.pokemon]

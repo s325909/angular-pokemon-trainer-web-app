@@ -40,7 +40,11 @@ export class CatchPokemonButtonComponent implements OnInit {
     });
 
 
-    alert("You caught the pokemon: " + this.pokemonName.charAt(0).toUpperCase() + this.pokemonName.slice(1) + ". Congrats brother!")
+    if (!this.hasPokemon) {
+      alert("You caught the pokemon: " + this.pokemonName.charAt(0).toUpperCase() + this.pokemonName.slice(1) + ". Congrats brother!");
+    } else {
+      alert("You released the pokemon: " + this.pokemonName.charAt(0).toUpperCase() + this.pokemonName.slice(1) + "... Why, brother!");
+    }
   }
 
 }
