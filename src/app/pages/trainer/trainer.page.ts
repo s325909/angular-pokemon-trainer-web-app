@@ -38,7 +38,6 @@ export class TrainerPage implements OnInit {
       trainer.pokemon.forEach(pokemonName => {
         const pokemon = this.pokemonCatalogueService.pokemonByName(pokemonName.toString())
         if (pokemon) this._caughtPokemon.push(pokemon);
-        console.log(this._caughtPokemon);
       });
     }
   }
