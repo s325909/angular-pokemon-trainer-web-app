@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageKeys } from 'src/app/enums/storage-keys.enum';
 import { Trainer } from 'src/app/models/trainer.model';
-import { LandingPage } from 'src/app/pages/landing/landing.page';
 import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({

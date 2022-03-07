@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { finalize, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Pokemon } from '../models/pokemon.model';
 import { Trainer } from '../models/trainer.model';
 import { PokemonCatalogueService } from './pokemon-catalogue.service';
 import { TrainerService } from './trainer.service';
@@ -35,7 +34,7 @@ export class PokemonCatchService {
 
   constructor(
     private readonly http: HttpClient,
-    private readonly pokemonCatalogueService: PokemonCatalogueService,
+    // private readonly pokemonCatalogueService: PokemonCatalogueService,
     private readonly trainerService: TrainerService,
     private readonly router: Router
   ) { }

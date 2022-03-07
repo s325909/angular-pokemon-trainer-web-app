@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageKeys } from 'src/app/enums/storage-keys.enum';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.service';
 import { TrainerService } from 'src/app/services/trainer.service';
