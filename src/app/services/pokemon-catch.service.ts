@@ -55,10 +55,11 @@ export class PokemonCatchService {
     let hasPokemon: boolean = false;
 
     if (this.trainerService.inTrainerPokemon(pokemonName)) {
-      window.confirm("You already caught this Pokemon, Brother! \nWould you like to release it?")
+      if (!window.confirm("You already caught this Pokemon, Brother! \nWould you like to release it?"))
       // throw new Error("addToTrainerPokemons: Pokemon already caught");
       hasPokemon = true;
     }
+
 
     const headers = new HttpHeaders({
       "content-type": "application/json",
