@@ -37,13 +37,19 @@ export class PokemonCatchService {
     }
 
     const trainer: Trainer = this.trainerService.trainer;
-    // const pokemon: Pokemon | undefined = this.pokemonCatalogueService.pokemonById(pokemonId);
+
+    // const pokemon: Pokemon | undefined = this.pokemonCatalogueService.pokemonByName;
 
     // if (!pokemon) {
-    //   throw new Error("addToTrainerPokemons: no pokemon with id: " + pokemonId)
+    //   throw new Error("addToTrainerPokemons: no pokemon with name: " + pokemonName)
     // }
 
     // const hasPokemon: Pokemon | undefined = 
+
+    if (this.trainerService.inTrainerPokemon(pokemonName)) {
+      alert("You already caught this Pokemon, Brother!")
+      throw new Error("addToTrainerPokemons: Pokemon already caught");
+    }
 
     // if (this.trainerService.inPokemon(pokemonId)) {
     //   throw new Error("addToTrainerPokemons: Pokemon already caught")
