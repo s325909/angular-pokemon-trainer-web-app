@@ -26,29 +26,10 @@ export class TrainerService {
 
   public inTrainerPokemon(pokemonName: string): boolean {
 
-
     if (this._trainer) {
-      console.log(this.trainer?.pokemon.find((pokemon: Result) => pokemon.toString() === pokemonName));
-
-      return Boolean(this.trainer?.pokemon.find((pokemon: Result) => pokemon.toString() === pokemonName))
+      return Boolean(this.trainer?.pokemon.find((pokemon: String) => pokemon === pokemonName))
     }
 
     return false;
   }
-
-
-  // public inPokemon(pokemonId: number): boolean {
-  //   if (this._trainer) {
-  //     return Boolean(this.trainer?.pokemon.find((pokemon: Pokemon) => pokemon.id === pokemonId))
-  //   }
-
-  //   return false;
-  // }
-
-  // public trainerCaughtPokemon() {
-  //   if (this.trainer !== undefined) {
-  //     const pokemon = servie
-  //   }
-
-  // }
 }

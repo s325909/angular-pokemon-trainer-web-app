@@ -63,8 +63,10 @@ export class PokemonCatchService {
 
     this._loading = true;
 
+    trainer.pokemon.push(pokemonName)
+
     return this.http.patch(`${apiTrainers}/${trainer.id}`, {
-      pokemon: [...trainer.pokemon, pokemonName]
+      pokemon: [...trainer.pokemon]
     }, {
       headers
     }
