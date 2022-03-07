@@ -29,20 +29,24 @@ export class CatchPokemonButtonComponent implements OnInit {
   }
 
   onCatchClick(): void {
+
+    this.hasPokemon = this.trainerService.inTrainerPokemon(this.pokemonName);
+
+    if (this.hasPokemon && !window.confirm("You already caught this Pokemon, Brother! \nWould you like to release it?")) {
+      return;
+    } 
     // Add pokemon to trainer pokemon
     this.pokemonCatchService.addToTrainerPokemon(this.pokemonName)
+
     .subscribe({
       next: (response: Trainer) => {
         // console.log("NEXT", response);
         this.hasPokemon = this.trainerService.inTrainerPokemon(this.pokemonName);
-        
-        
       },
       error: (error: HttpErrorResponse) => {
         console.log("ERROR", error.message);
       }
     });
-
 
     if (!this.hasPokemon) {
       alert("You caught the pokemon: " + this.pokemonName.charAt(0).toUpperCase() + this.pokemonName.slice(1) + ". Congrats brother!");

@@ -40,10 +40,6 @@ export class PokemonCatchService {
     private readonly router: Router
   ) { }
 
-  // Get the trainer based on Id
-
-  // Path request with the trainerId and the pokemon
-
   public addToTrainerPokemon(pokemonName: string): Observable<any> {
 
     if (!this.trainerService.trainer) {
@@ -55,8 +51,6 @@ export class PokemonCatchService {
     let hasPokemon: boolean = false;
 
     if (this.trainerService.inTrainerPokemon(pokemonName)) {
-      if (!window.confirm("You already caught this Pokemon, Brother! \nWould you like to release it?"))
-      // throw new Error("addToTrainerPokemons: Pokemon already caught");
       hasPokemon = true;
     }
 
