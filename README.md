@@ -35,7 +35,7 @@ We also install and use **Tailwind** for additional CSS styling with classes.
 Sign in with a username on the **Landing** page. This will take you to the **Cataloge** page. From here you can select Pokemon to catach and navigate to the **Trainer** page where view your Pokemon.
 
 The application is published on **Heroku**.\
-Open [https://jc-react-translation-app.herokuapp.com/](https://jc-react-translation-app.herokuapp.com/) to view the application.
+Open [https://aa-jc-ng-pokedex.herokuapp.com/](https://aa-jc-ng-pokedex.herokuapp.com) to view the application.
 
 ## Authors and Developers
 
